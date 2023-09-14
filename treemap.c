@@ -77,10 +77,10 @@ Pair * searchTreeMap(TreeMap * tree, void* key) {
   while(nodoActual!=NULL){
     if(is_equal(tree,nodoActual->pair->key,key)){
       tree->current=nodoActual;
-      return nodoActual->pair;
+      return tree->current->pair;
     }
     else{
-      if(tree->lower_than(tree,nodoActual->pair->key)<0){
+      if(tree->lower_than(tree,nodoActual->pair->key)){
         nodoActual=nodoActual->left;
       }
       else{
