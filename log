@@ -192,3 +192,16 @@ treemap.c:71:18: error: ‘newNode’ undeclared (first use in this function)
 treemap.c:71:18: note: each undeclared identifier is reported only once for each function it appears in
 Compilation failed
 61af5ab
+Thu 14 Sep 2023 09:49:45 PM UTC: 
+ treemap.c | 1 +
+ 1 file changed, 1 insertion(+)
+In file included from test.c:4:
+treemap.c: In function ‘insertTreeMap’:
+treemap.c:52:23: error: too few arguments to function ‘createTreeNode’
+   52 |   TreeNode* newNode = createTreeNode(newPair);
+      |                       ^~~~~~~~~~~~~~
+treemap.c:29:12: note: declared here
+   29 | TreeNode * createTreeNode(void* key, void * value) {
+      |            ^~~~~~~~~~~~~~
+Compilation failed
+3508693
