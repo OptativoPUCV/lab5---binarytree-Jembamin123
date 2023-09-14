@@ -47,7 +47,7 @@ TreeMap * createTreeMap(int (*lower_than) (void* key1, void* key2)){
 
 void insertTreeMap(TreeMap * tree, void* key, void * value) {
   Pair* newPair=(Pair*)malloc(sizeof(Pair));
-  TreeNode* newNode = createTreeNode(newPair);
+  TreeNode* newNode = createTreeNode(newPair->key,newPair->value);
   TreeNode* currentNode = tree->root;
   TreeNode* parentNode = NULL;
   

@@ -169,3 +169,15 @@ treemap.c:29:12: note: declared here
       |            ^~~~~~~~~~~~~~
 Compilation failed
 cf0727c
+Thu 14 Sep 2023 09:44:42 PM UTC: 
+ treemap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:4:
+test.c: In function ‘insertTreeMap’:
+treemap.c:50:23: error: ‘*newPair.value’ is used uninitialized [-Werror=uninitialized]
+   50 |   TreeNode* newNode = createTreeNode(newPair->key,newPair->value);
+      |                       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+treemap.c:50:23: error: ‘*newPair.key’ is used uninitialized [-Werror=uninitialized]
+cc1: all warnings being treated as errors
+Compilation failed
+3228f6e
