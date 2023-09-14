@@ -181,3 +181,14 @@ treemap.c:50:23: error: ‘*newPair.key’ is used uninitialized [-Werror=uninit
 cc1: all warnings being treated as errors
 Compilation failed
 3228f6e
+Thu 14 Sep 2023 09:49:24 PM UTC: 
+ treemap.c | 6 ++++--
+ 1 file changed, 4 insertions(+), 2 deletions(-)
+In file included from test.c:4:
+treemap.c: In function ‘insertTreeMap’:
+treemap.c:71:18: error: ‘newNode’ undeclared (first use in this function)
+   71 |     tree->root = newNode;
+      |                  ^~~~~~~
+treemap.c:71:18: note: each undeclared identifier is reported only once for each function it appears in
+Compilation failed
+61af5ab
