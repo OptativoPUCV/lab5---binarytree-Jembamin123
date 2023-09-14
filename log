@@ -220,3 +220,53 @@ Thu 14 Sep 2023 09:55:21 PM UTC:
  1 file changed, 2 insertions(+), 2 deletions(-)
  tests:  0|0
 8cadae1
+Thu 14 Sep 2023 10:28:21 PM UTC: 
+ treemap.c | 47 ++++++++++++++++++++++++++---------------------
+ 1 file changed, 26 insertions(+), 21 deletions(-)
+In file included from test.c:4:
+treemap.c: In function ‘insertTreeMap’:
+treemap.c:60:21: error: initialization of ‘TreeMap *’ from incompatible pointer type ‘TreeNode *’ [-Werror=incompatible-pointer-types]
+   60 |     TreeMap* temp = tree->root;
+      |                     ^~~~
+treemap.c:62:14: error: comparison of distinct pointer types lacks a cast [-Werror]
+   62 |       if(key < temp){
+      |              ^
+treemap.c:64:28: error: assignment to ‘int (*)(void *, void *)’ from incompatible pointer type ‘TreeNode *’ [-Werror=incompatible-pointer-types]
+   64 |           temp->lower_than = newNode;
+      |                            ^
+treemap.c:68:16: error: assignment to ‘TreeMap *’ from incompatible pointer type ‘int (*)(void *, void *)’ [-Werror=incompatible-pointer-types]
+   68 |           temp = temp->lower_than;
+      |                ^
+treemap.c:72:16: error: comparison of distinct pointer types lacks a cast [-Werror]
+   72 |         if(key > temp){
+      |                ^
+treemap.c:74:30: error: assignment to ‘int (*)(void *, void *)’ from incompatible pointer type ‘TreeNode *’ [-Werror=incompatible-pointer-types]
+   74 |             temp->lower_than = newNode;
+      |                              ^
+treemap.c:51:10: error: array subscript ‘Pair[0]’ is partly outside array bounds of ‘unsigned char[8]’ [-Werror=array-bounds]
+   51 |   newPair->key = key;
+      |          ^~
+treemap.c:49:26: note: referencing an object of size 8 allocated by ‘malloc’
+   49 |   Pair* newPair = (Pair*)malloc(sizeof(Pair*));
+      |                          ^~~~~~~~~~~~~~~~~~~~~
+treemap.c:52:10: error: array subscript ‘Pair[0]’ is partly outside array bounds of ‘unsigned char[8]’ [-Werror=array-bounds]
+   52 |   newPair->value = value;
+      |          ^~
+treemap.c:49:26: note: referencing an object of size 8 allocated by ‘malloc’
+   49 |   Pair* newPair = (Pair*)malloc(sizeof(Pair*));
+      |                          ^~~~~~~~~~~~~~~~~~~~~
+treemap.c:53:10: error: array subscript ‘TreeNode[0]’ is partly outside array bounds of ‘unsigned char[8]’ [-Werror=array-bounds]
+   53 |   newNode->left = NULL;
+      |          ^~
+treemap.c:50:34: note: referencing an object of size 8 allocated by ‘malloc’
+   50 |   TreeNode* newNode = (TreeNode*)malloc(sizeof(TreeNode*));
+      |                                  ^~~~~~~~~~~~~~~~~~~~~~~~~
+treemap.c:54:10: error: array subscript ‘TreeNode[0]’ is partly outside array bounds of ‘unsigned char[8]’ [-Werror=array-bounds]
+   54 |   newNode->right = NULL;
+      |          ^~
+treemap.c:50:34: note: referencing an object of size 8 allocated by ‘malloc’
+   50 |   TreeNode* newNode = (TreeNode*)malloc(sizeof(TreeNode*));
+      |                                  ^~~~~~~~~~~~~~~~~~~~~~~~~
+cc1: all warnings being treated as errors
+Compilation failed
+19af1ae
