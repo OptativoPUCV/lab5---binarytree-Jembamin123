@@ -136,3 +136,23 @@ Thu 14 Sep 2023 07:56:29 PM UTC:
  tests:  11|6
 total_score: 15/70
 a05f832
+Thu 14 Sep 2023 09:35:55 PM UTC: 
+ treemap.c | 3 +--
+ 1 file changed, 1 insertion(+), 2 deletions(-)
+In file included from test.c:4:
+treemap.c: In function ‘insertTreeMap’:
+treemap.c:57:11: error: ‘TreeMap’ has no member named ‘r’
+   57 |       tree->r;
+      |           ^~
+treemap.c:63:25: error: left-hand operand of comma expression has no effect [-Werror=unused-value]
+   63 |       actual->left== key,value;
+      |                         ^
+treemap.c:63:7: error: statement with no effect [-Werror=unused-value]
+   63 |       actual->left== key,value;
+      |       ^~~~~~
+treemap.c:49:9: error: unused variable ‘newPair’ [-Werror=unused-variable]
+   49 |   Pair* newPair=(Pair*)malloc(sizeof(Pair));
+      |         ^~~~~~~
+cc1: all warnings being treated as errors
+Compilation failed
+4753938
