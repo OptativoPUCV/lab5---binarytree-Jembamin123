@@ -80,11 +80,11 @@ Pair * searchTreeMap(TreeMap * tree, void* key) {
       return nodoActual->pair;
     }
     else{
-      if(is_equal(tree,nodoActual->pair->key,key)>0){
-        nodoActual=nodoActual->right;
+      if(is_equal(tree,nodoActual->pair->key,key)<0){
+        nodoActual=nodoActual->left;
       }
       else{
-        nodoActual=nodoActual->left;
+        nodoActual=nodoActual->right;
       } 
     }    
   }
