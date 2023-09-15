@@ -284,3 +284,40 @@ treemap.c:52:19: error: assignment to ‘Pair *’ from ‘int’ makes pointer 
 cc1: all warnings being treated as errors
 Compilation failed
 0130f6b
+Fri 15 Sep 2023 01:12:34 AM UTC: 
+ treemap.c | 54 ++++++++++++++++++++++++------------------------------
+ 1 file changed, 24 insertions(+), 30 deletions(-)
+In file included from test.c:4:
+treemap.c: In function ‘insertTreeMap’:
+treemap.c:49:20: error: invalid initializer
+   49 |   TreeNode nodoAct=tree->root;
+      |                    ^~~~
+treemap.c:53:33: error: invalid type argument of ‘->’ (have ‘TreeNode’)
+   53 |     if(is_equal(tree,key,nodoAct->pair->key)){
+      |                                 ^~
+treemap.c:57:34: error: invalid type argument of ‘->’ (have ‘TreeNode’)
+   57 |       if(tree->lower_than(nodoAct->pair->key,key)){
+      |                                  ^~
+treemap.c:58:19: error: invalid type argument of ‘->’ (have ‘TreeNode’)
+   58 |         if(nodoAct->right==NULL){
+      |                   ^~
+treemap.c:59:18: error: invalid type argument of ‘->’ (have ‘TreeNode’)
+   59 |           nodoAct->right=newNode;
+      |                  ^~
+treemap.c:60:27: error: incompatible types when assigning to type ‘TreeNode *’ from type ‘TreeNode’
+   60 |           newNode->parent=nodoAct;
+      |                           ^~~~~~~
+treemap.c:65:21: error: invalid type argument of ‘->’ (have ‘TreeNode’)
+   65 |           if(nodoAct->left==NULL){
+      |                     ^~
+treemap.c:66:20: error: invalid type argument of ‘->’ (have ‘TreeNode’)
+   66 |             nodoAct->left=newNode;
+      |                    ^~
+treemap.c:67:29: error: incompatible types when assigning to type ‘TreeNode *’ from type ‘TreeNode’
+   67 |             newNode->parent=nodoAct;
+      |                             ^~~~~~~
+treemap.c:74:24: error: invalid type argument of ‘->’ (have ‘TreeNode’)
+   74 |         nodoAct=nodoAct->right;
+      |                        ^~
+Compilation failed
+02f6322
