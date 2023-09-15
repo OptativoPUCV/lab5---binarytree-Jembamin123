@@ -243,7 +243,7 @@ Pair * nextTreeMap(TreeMap * tree){
   }
   else{
     sig=current->parent;
-    while(sig != NULL || current==sig->right){
+    while(sig != NULL && current==sig->right){
       current = sig;
       sig=sig->parent;
     }
