@@ -143,7 +143,7 @@ void removeNode(TreeMap * tree, TreeNode* node) {
         }
       }
       else{
-        TreeNode* min=minimun(node->right);
+        TreeNode* min=minimum(node->right);
         void* auxValue=node->pair->value;
         void* auxKey=node->pair->key; 
         node->pair->key=min->pair->key;
