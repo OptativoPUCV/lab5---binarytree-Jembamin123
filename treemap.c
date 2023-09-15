@@ -73,7 +73,7 @@ void insertTreeMap(TreeMap * tree, void* key, void * value) {
             return;
           }
           else{
-            nodoAct=nodoAct->right;
+            nodoAct=nodoAct->left;
           }
       }
     }
