@@ -221,43 +221,37 @@ Pair * firstTreeMap(TreeMap * tree) {
 }
 
 Pair * nextTreeMap(TreeMap * tree){
-  if(tree == NULL || tree->root == NULL){
-    return NULL; 
-  }
-
-  TreeNode *current = tree->root;
-
-  if(current == NULL){
-    return NULL; 
-  }
-
-  if(current == NULL){
-    current = tree->root;
-    while(current->left != NULL){
-      current = current->left;
+    if (tree == NULL || tree->root == NULL) {
+        return NULL; 
     }
-  }
-  else{
-    TreeNode *next = current->right;
-    if(next != NULL){
-      while (next->left != NULL) {
-        next = next->left;
-      }
-      current = next;
-    } 
-    else{
-      next = current->parent;
-      while(next != NULL && current == next->right){
-        current = next;
-        next = next->parent;
-      }
-      current = next;
-    }
-  }
-  
-  if(current == NULL){
-    return NULL;
-  }
 
-  return current->pair;
+    TreeNode *current = tree->current;
+
+    if (current == NULL) {
+        return NULL; 
+    }
+
+    TreeNode *next = NULL;
+
+    if (current->right != NULL) {
+        next = current->right;
+        while (next->left != NULL) {
+            next = next->left;
+        }
+    } else {
+        TreeNode *parent = current->parent;
+        while (parent != NULL && current == parent->right) {
+            current = parent;
+            parent = parent->parent;
+        }
+        next = parent;
+    }
+
+    tree->current = next; 
+
+    if (next == NULL) {
+        return NULL; 
+    }
+
+    return next->pair;
 }
