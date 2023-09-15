@@ -143,7 +143,7 @@ void removeNode(TreeMap * tree, TreeNode* node) {
         }
       }
       else{
-        //caso2
+        /*caso2
         TreeNode* min=minimum(node->right);
         void* auxValue=node->pair->value;
         void* auxKey=node->pair->key; 
@@ -155,6 +155,8 @@ void removeNode(TreeMap * tree, TreeNode* node) {
         
         removeNode(tree,min);
         return;
+        */
+        eraseTreeMap(tree, node->pair->key);
       }
     }
   }
