@@ -531,3 +531,14 @@ Fri 15 Sep 2023 05:10:35 PM UTC:
  tests:  29|0
 total_score: 70/70
 2e08173
+Fri 15 Sep 2023 05:11:22 PM UTC: 
+ treemap.c | 5 -----
+ 1 file changed, 5 deletions(-)
+In file included from test.c:4:
+treemap.c: In function ‘insertTreeMap’:
+treemap.c:48:8: error: implicit declaration of function ‘is_equal’ [-Werror=implicit-function-declaration]
+   48 |     if(is_equal(tree,key,nodoAct->pair->key)){
+      |        ^~~~~~~~
+cc1: all warnings being treated as errors
+Compilation failed
+dfcef55

@@ -19,11 +19,6 @@ struct TreeMap {
     int (*lower_than) (void* key1, void* key2);
 };
 
-int is_equal(TreeMap* tree, void* key1, void* key2){
-    if(tree->lower_than(key1,key2)==0 &&  
-        tree->lower_than(key2,key1)==0) return 1;
-    else return 0;
-}
 
 
 TreeNode * createTreeNode(void* key, void * value) {
@@ -225,7 +220,7 @@ Pair * nextTreeMap(TreeMap * tree){
   if(current==NULL){
     return NULL; 
   }
-  TreeNode* sig = NULL;
+  TreeNode* sig=NULL;
   if(current->right != NULL){
     sig = current->right;
     while(sig->left != NULL){
