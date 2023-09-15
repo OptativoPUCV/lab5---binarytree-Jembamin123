@@ -365,3 +365,21 @@ treemap.c:146:23: error: initialization of ‘TreeNode *’ from ‘int’ makes
 cc1: all warnings being treated as errors
 Compilation failed
 73cc58b
+Fri 15 Sep 2023 02:12:14 AM UTC: 
+ treemap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:4:
+treemap.c: In function ‘removeNode’:
+treemap.c:136:33: error: ‘sona’ undeclared (first use in this function); did you mean ‘son’?
+  136 |             node->parent->right=sona;
+      |                                 ^~~~
+      |                                 son
+treemap.c:136:33: note: each undeclared identifier is reported only once for each function it appears in
+treemap.c:146:23: error: implicit declaration of function ‘minimun’; did you mean ‘minimum’? [-Werror=implicit-function-declaration]
+  146 |         TreeNode* min=minimun(node->right);
+      |                       ^~~~~~~
+      |                       minimum
+treemap.c:146:23: error: initialization of ‘TreeNode *’ from ‘int’ makes pointer from integer without a cast [-Werror=int-conversion]
+cc1: all warnings being treated as errors
+Compilation failed
+d1ed90f
