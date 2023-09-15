@@ -66,23 +66,26 @@ void insertTreeMap(TreeMap * tree, void* key, void * value) {
         }
       }
       else{
-          if(nodoAct->left==NULL){
-            nodoAct->left=newNode;
-            newNode->parent=nodoAct;
-            tree->current=newNode;
-            return;
-          }
-          else{
-            nodoAct=nodoAct->left;
-          }
+        if(nodoAct->left==NULL){
+          nodoAct->left=newNode;
+          newNode->parent=nodoAct;
+          tree->current=newNode;
+          return;
+        }
+        else{
+          nodoAct=nodoAct->left;
+        }
       }
     }
   }
 }
 
-TreeNode * minimum(TreeNode * x){
-
-  return NULL;
+TreeNode * minimum(TreeNode * x){    
+  TreeNode* nodoAct = x;
+    while(nodoAct!=NULL && nodoAct->left!=NULL){
+      nodoAct = nodoAct->left;
+    }
+  return nodoAct;
 }
 
 
