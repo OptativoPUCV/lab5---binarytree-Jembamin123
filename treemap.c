@@ -234,7 +234,7 @@ Pair * nextTreeMap(TreeMap * tree){
   } 
   else{
     TreeNode* parent=current->parent;
-    while(parent!=NULL || current==parent->right){
+    while(parent!=NULL && current==parent->right){
       current=parent;
       parent=parent->parent;
     }
